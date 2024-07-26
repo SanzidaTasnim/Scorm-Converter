@@ -1,0 +1,14 @@
+{
+    "authors": [
+        {
+            "name": "Sanzida Tasnim",
+            "email": "tasnim5sanzida@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sanzida\\Scorm\\" : "",
+            "Sanzida\\Scorm\\App\\" : "app/"
+        }
+    }
+}
