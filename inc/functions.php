@@ -1,10 +1,24 @@
 <?php 
 
+function get_scorm_file_path($course_id) {
+   $upload_dir = wp_upload_dir(); // Fetches the current upload directory info
+   $scorm_dir = $upload_dir['basedir'] . '/scorm_packages'; // Appends a subdirectory for SCORM packages
+
+   // Ensure the SCORM directory exists
+   if (!file_exists($scorm_dir)) {
+       wp_mkdir_p($scorm_dir); // Creates the directory if it doesn't exist
+   }
+
+   $filename = $scorm_dir . "/course_{$course_id}.zip";
+   return $filename;
+}
+
+
   if ( ! function_exists('get_course_data') ) {
    function get_course_data( $course_id ) {
       $course = get_post( $course_id );
       $course_meta = get_post_meta( $course_id );
-      // Assume 'course_content' is a meta key that holds course contents
+      
       $course_content = $course_meta['course_content'] ?? 'No content available.';
       
       return [
@@ -57,29 +71,35 @@
   if ( ! function_exists('') ) {
    function create_scorm_package($course_id) {
       $course_data = get_course_data($course_id);
-      $manifest_xml = create_scorm_manifest($course_data);
+
+      wp_send_json_success( [
+         'status' => 'success',
+         'data' => $course_data
+      ] );
+
+      // $manifest_xml = create_scorm_manifest($course_data);
   
-      $zip = new ZipArchive();
-      $filename = "/path/to/your/directory/course_{$course_id}.zip";
+      // $zip = new ZipArchive();
+      // $filename = get_scorm_file_path( $course_id );
   
-      if ($zip->open($filename, ZipArchive::CREATE) !== TRUE) {
-          exit("Cannot open <$filename>\n");
-      }
+      // if ($zip->open($filename, ZipArchive::CREATE) !== TRUE) {
+      //     exit("Cannot open <$filename>\n");
+      // }
   
-      // Add the manifest file
-      $zip->addFromString('imsmanifest.xml', $manifest_xml);
+      // // Add the manifest file
+      // $zip->addFromString('imsmanifest.xml', $manifest_xml);
   
-      // Add course content file (you would need to create this HTML file based on your course data)
-      $zip->addFromString('index.html', '<html><body>' . htmlspecialchars($course_data['content']) . '</body></html>');
+      // // Add course content file (you would need to create this HTML file based on your course data)
+      // $zip->addFromString('index.html', '<html><body>' . htmlspecialchars($course_data['content']) . '</body></html>');
   
-      // All files are added, now close the zip file
-      $zip->close();
+      // // All files are added, now close the zip file
+      // $zip->close();
   
-      // Optionally, force download the zip file
-      header('Content-Type: application/zip');
-      header('Content-disposition: attachment; filename=' . basename($filename));
-      header('Content-Length: ' . filesize($filename));
-      readfile($filename);
+      // // Optionally, force download the zip file
+      // header('Content-Type: application/zip');
+      // header('Content-disposition: attachment; filename=' . basename($filename));
+      // header('Content-Length: ' . filesize($filename));
+      // readfile($filename);
    }
   
   }

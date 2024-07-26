@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
            success: function(response) {
                alert('File is ready for download!');
                window.location.href = response;
-               console.log( courseId );
+               console.log( response.data );
            },
            error: function() {
                alert('Error: Unable to export course.');

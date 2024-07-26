@@ -45,8 +45,8 @@ class Admin
         );
     }
 
-    public function scorm_converter_callback() {
-        echo '<button id="export_scorm" class="button" type="button">Export as SCORM</button>';
+    public function scorm_converter_callback( $post ) {
+        echo '<button id="export_scorm" class="button" type="button" data-course-id="' . esc_attr($post->ID) . '">Export as SCORM</button>';
     }
 
     public function export_course_scorm() {
