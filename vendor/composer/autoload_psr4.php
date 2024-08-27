@@ -6,6 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Sanzida\\Scorm\\App\\' => array($baseDir . '/app'),
-    'Sanzida\\Scorm\\' => array($baseDir . '/'),
+    'Sanzida\\WPCategory\\App\\' => array($baseDir . '/app'),
+    'Sanzida\\WPCategory\\' => array($baseDir . '/'),
 );

@@ -9,17 +9,17 @@ class ComposerStaticInitb5fd96a60a5f20bc0081ba9668ad742e
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'Sanzida\\Scorm\\App\\' => 18,
-            'Sanzida\\Scorm\\' => 14,
+            'Sanzida\\WPCategory\\App\\' => 23,
+            'Sanzida\\WPCategory\\' => 19,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Sanzida\\Scorm\\App\\' => 
+        'Sanzida\\WPCategory\\App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
-        'Sanzida\\Scorm\\' => 
+        'Sanzida\\WPCategory\\' => 
         array (
             0 => __DIR__ . '/../..' . '/',
         ),

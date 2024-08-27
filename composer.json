@@ -7,8 +7,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Sanzida\\Scorm\\" : "",
-            "Sanzida\\Scorm\\App\\" : "app/"
+            "Sanzida\\WPCategory\\" : "",
+            "Sanzida\\WPCategory\\App\\" : "app/"
         }
     }
 }

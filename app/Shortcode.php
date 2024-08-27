@@ -1,6 +1,6 @@
 <?php
 
-namespace Sanzida\Scorm\App;
+namespace Sanzida\WPCategory\App;
 
 /**
  * Admin Class

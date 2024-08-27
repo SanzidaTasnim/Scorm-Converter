@@ -1,0 +1,27 @@
+.custom-category-wrapper {
+   height: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.custom-category-image {
+   z-index: 1;
+}
+
+.custom-category-textarea {
+   z-index: 2;
+   color: white;
+   font-size: 24px;
+   background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to make the text more readable */
+   padding: 20px;
+   border-radius: 10px;
+}
+
+.show-more {
+   cursor: pointer;
+   font-size: 16px;
+   margin-top: 10px;
+   display: inline-block;
+}

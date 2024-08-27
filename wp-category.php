@@ -1,17 +1,17 @@
 <?php 
 /*
- * Plugin Name:       Scorm Converter
+ * Plugin Name:       WP Category 
  * Plugin URI:        
- * Description:       Converting course content to scorm file.
+ * Description:       Add Content to Category.
  * Version:           0.0.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Sanzida Tasnim
  * Author URI:        https://github.com/SanzidaTasnim
- * Text Domain:       scorm-converter
+ * Text Domain:       wp-category
 */
 
-namespace Sanzida\Scorm;
+namespace Sanzida\WPCategory;
 
 if( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
@@ -20,7 +20,7 @@ if( ! defined( 'ABSPATH' ) ) {
 /**
  * Plugin main class
  */ 
-final class ScormConverter {
+final class WP_category {
     static $instance = false;
 
     /**
@@ -45,9 +45,9 @@ final class ScormConverter {
      * define all constant
      */
     private function define() {
-        define( 'SCORM', __FILE__ );
-        define( 'SCORM_DIR', dirname( SCORM ) );
-        define( 'SCORM_ASSET', plugins_url( 'assets', SCORM ) );
+        define( 'WP_CATEGORY', __FILE__ );
+        define( 'WP_CATEGORY_DIR', dirname( WP_CATEGORY ) );
+        define( 'WP_CATEGORY_ASSET', plugins_url( 'assets', WP_CATEGORY ) );
     }
 
     /**
@@ -75,4 +75,4 @@ final class ScormConverter {
 /**
  * Cick off the plugins 
  */
-ScormConverter::get_esent_plugin();
+WP_category::get_esent_plugin();
